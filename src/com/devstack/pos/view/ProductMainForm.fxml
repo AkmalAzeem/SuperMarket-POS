@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="context" prefHeight="831.0" prefWidth="1454.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devstack.pos.controller.ProductMainFormController">
+   <children>
+      <Label layoutX="30.0" layoutY="27.0" text="Product Management" textFill="#7c0505">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="9.0" layoutY="76.0" prefHeight="14.0" prefWidth="1424.0" />
+      <JFXButton buttonType="RAISED" layoutX="1296.0" layoutY="27.0" onAction="#btnBackToHomeOnAction" prefHeight="42.0" prefWidth="123.0" style="-fx-background-color: #7f8c8d;" text="Back to home" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>  
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <AnchorPane layoutX="22.0" layoutY="108.0" prefHeight="706.0" prefWidth="638.0" style="-fx-background-color: #bdc3c7;">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="447.0" layoutY="28.0" onAction="#btnNewProductOnAction" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #2980b9;" text="+ New Product" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXTextField fx:id="txtProductCode" editable="false" labelFloat="true" layoutX="16.0" layoutY="22.0" prefHeight="42.0" prefWidth="203.0" promptText="Product Code">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <TextArea fx:id="txtProductDescription" layoutX="8.0" layoutY="76.0" prefHeight="212.0" prefWidth="623.0" promptText="Description" />
+            <JFXButton fx:id="btnSaveUpdate" buttonType="RAISED" layoutX="414.0" layoutY="307.0" onAction="#btnSaveProductOnAction" prefHeight="42.0" prefWidth="217.0" style="-fx-background-color: #2980b9;" text="Save Product" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <TextField layoutX="12.0" layoutY="367.0" prefHeight="35.0" prefWidth="616.0" promptText="search here" />
+            <TableView fx:id="tbl" layoutX="16.0" layoutY="413.0" prefHeight="285.0" prefWidth="608.0">
+              <columns>
+                <TableColumn fx:id="colProductId" prefWidth="75.0" text="#" />
+                <TableColumn fx:id="colProductDesc" prefWidth="201.0" text="Description" />
+                  <TableColumn fx:id="colProductShowMore" prefWidth="221.0" text="Show more" />
+                  <TableColumn fx:id="colProductDelete" prefWidth="107.0" text="Delete" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="694.0" layoutY="108.0" orientation="VERTICAL" prefHeight="696.0" prefWidth="0.0" />
+      <TableView fx:id="tblDetail" layoutX="727.0" layoutY="400.0" prefHeight="414.0" prefWidth="691.0">
+         <columns>
+            <TableColumn fx:id="colPDId" prefWidth="53.0" text="#" />
+            <TableColumn fx:id="colPDQty" prefWidth="63.0" text="QTY" />
+            <TableColumn fx:id="colPDSellingPrice" prefWidth="155.0" text="Selling Price" />
+            <TableColumn fx:id="colPDBuyingPrice" prefWidth="153.0" text="Buying Price" />
+            <TableColumn fx:id="colPDDAvailability" prefWidth="71.0" text="D;Av" />
+            <TableColumn fx:id="colPDShowPrice" prefWidth="113.0" text="Show Price" />
+            <TableColumn fx:id="colPDDelete" prefWidth="82.0" text="Delete" />
+         </columns>
+      </TableView>
+      <TextField fx:id="txtSelectedProdId" editable="false" layoutX="727.0" layoutY="115.0" prefHeight="35.0" prefWidth="231.0" promptText="Select Product Code" />
+      <TextArea fx:id="txtSelectedProdDescription" editable="false" layoutX="727.0" layoutY="164.0" prefHeight="226.0" prefWidth="691.0" promptText="Description" />
+      <JFXButton fx:id="btnNewBatch" buttonType="RAISED" disable="true" layoutX="1237.0" layoutY="112.0" onAction="#btnNewBatchOnAction" prefHeight="42.0" prefWidth="182.0" style="-fx-background-color: #2980b9;" text="+ New Batch" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

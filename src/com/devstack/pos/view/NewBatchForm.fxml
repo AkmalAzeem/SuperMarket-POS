@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="context" prefHeight="681.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devstack.pos.controller.NewBatchFormController">
+   <children>
+      <Label layoutX="40.0" layoutY="37.0" text="New Batch" textFill="#7c0505">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="19.0" layoutY="86.0" prefHeight="14.0" prefWidth="841.0" />
+      <JFXButton buttonType="RAISED" layoutX="726.0" layoutY="16.0" onAction="#btnBackToHomeOnAction" prefHeight="42.0" prefWidth="123.0" style="-fx-background-color: #7f8c8d;" text="Back to home" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <AnchorPane layoutX="40.0" layoutY="100.0" prefHeight="336.0" prefWidth="352.0" style="-fx-background-color: #bdc3c7;">
+         <children>
+            <ImageView fx:id="barcodeImage" fitHeight="308.0" fitWidth="323.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" />
+         </children>
+      </AnchorPane>
+      <TextField fx:id="txtQty" layoutX="421.0" layoutY="107.0" prefHeight="42.0" prefWidth="366.0" promptText="Qty">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtBuyingPrice" layoutX="421.0" layoutY="176.0" prefHeight="42.0" prefWidth="366.0" promptText="Buying Price">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtProductCode" layoutX="40.0" layoutY="452.0" prefHeight="35.0" prefWidth="352.0" promptText="Product Id">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <TextArea fx:id="txtSelectedProdDescription" layoutX="40.0" layoutY="496.0" prefHeight="176.0" prefWidth="811.0" promptText="Description">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextArea>
+      <RadioButton fx:id="rBtnYes" layoutX="426.0" layoutY="426.0" mnemonicParsing="false" text="YES">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <toggleGroup>
+            <ToggleGroup fx:id="discount" />
+         </toggleGroup></RadioButton>
+      <Label layoutX="426.0" layoutY="387.0" text="Discount%" textFill="#4a109a">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="499.0" layoutY="426.0" mnemonicParsing="false" selected="true" text="NO" toggleGroup="$discount">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></RadioButton>
+      <JFXButton buttonType="RAISED" layoutX="727.0" layoutY="437.0" onAction="#saveBatchOnAction" prefHeight="42.0" prefWidth="123.0" style="-fx-background-color: #2ecc71;" text="Save Batch" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TextField fx:id="txtSellingPrice" layoutX="421.0" layoutY="247.0" prefHeight="42.0" prefWidth="366.0" promptText="Selling Price">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtShowPrice" layoutX="421.0" layoutY="320.0" prefHeight="42.0" prefWidth="366.0" promptText="Show Price">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

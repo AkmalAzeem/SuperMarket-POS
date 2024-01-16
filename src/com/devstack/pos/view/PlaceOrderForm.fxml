@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="context" prefHeight="853.0" prefWidth="1478.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devstack.pos.controller.PlaceOrderFormController">
+   <children>
+      <Label layoutX="40.0" layoutY="37.0" text="Place Order Management" textFill="#7c0505">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Separator layoutX="19.0" layoutY="86.0" prefHeight="14.0" prefWidth="1424.0" />
+      <JFXButton buttonType="RAISED" layoutX="1330.0" layoutY="30.0" onAction="#btnBackToHomeOnAction" prefHeight="42.0" prefWidth="123.0" style="-fx-background-color: #7f8c8d;" text="Back to home" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <RadioButton layoutX="46.0" layoutY="115.0" mnemonicParsing="false" selected="true" text="Manual Mode" textFill="#5a38f5">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="mode" />
+         </toggleGroup>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </RadioButton>
+      <RadioButton layoutX="208.0" layoutY="116.0" mnemonicParsing="false" selected="true" text="Auto Mode" textFill="#5a38f5" toggleGroup="$mode">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </RadioButton>
+      <Label layoutX="40.0" layoutY="188.0" text="Customer Details" textFill="#7c0505">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Separator layoutX="21.0" layoutY="220.0" prefHeight="14.0" prefWidth="1443.0" />
+      <TextField fx:id="txtEmail" layoutX="40.0" layoutY="245.0" onAction="#searchCustomerOnAction" prefHeight="35.0" prefWidth="280.0" promptText="email">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="331.0" layoutY="245.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="0.0" />
+      <TextField fx:id="txtName" editable="false" layoutX="345.0" layoutY="245.0" prefHeight="35.0" prefWidth="280.0" promptText="name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="637.0" layoutY="245.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="0.0" />
+      <TextField fx:id="txtContact" editable="false" layoutX="643.0" layoutY="245.0" prefHeight="35.0" prefWidth="280.0" promptText="contact">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="943.0" layoutY="245.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="0.0" />
+      <TextField fx:id="txtSalary" editable="false" layoutX="957.0" layoutY="245.0" prefHeight="35.0" prefWidth="280.0" promptText="salary">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <JFXButton buttonType="RAISED" layoutX="1303.0" layoutY="109.0" onAction="#btnNewCustomerOnAction" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #2980b9;" text="+ New Customer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Hyperlink fx:id="urlNewLoyalty" layoutX="40.0" layoutY="284.0" onAction="#newLoyaltyOnAction" text="Show Loyalty Card Information" underline="true" visible="false" />
+      <Hyperlink fx:id="lblLoyaltyType" layoutX="208.0" layoutY="189.0" text="(Gold Member)" visible="false">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Hyperlink>
+      <TextField fx:id="txtBarcode" layoutX="197.0" layoutY="341.0" onAction="#loadProductOnAction" prefHeight="35.0" prefWidth="280.0" promptText="Barcode">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Label layoutX="40.0" layoutY="343.0" text="Product Details" textFill="#7c0505">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="1128.0" layoutY="109.0" onAction="#btnNewProductOnAction" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #2980b9;" text="+ New Product" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Separator layoutX="21.0" layoutY="384.0" prefHeight="14.0" prefWidth="1443.0" />
+      <TextField fx:id="txtDescription" editable="false" layoutX="40.0" layoutY="408.0" prefHeight="35.0" prefWidth="280.0" promptText="Description">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="332.0" layoutY="408.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="0.0" />
+      <TextField fx:id="txtSellingPrice" editable="false" layoutX="347.0" layoutY="408.0" prefHeight="35.0" prefWidth="161.0" promptText="Selling Price">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="523.0" layoutY="408.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="0.0" />
+      <TextField fx:id="txtDiscount" editable="false" layoutX="538.0" layoutY="408.0" prefHeight="35.0" prefWidth="191.0" promptText="Discount" style="-fx-border-color: #1abc9c;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="740.0" layoutY="408.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="0.0" />
+      <TextField fx:id="txtShowPrice" editable="false" layoutX="754.0" layoutY="408.0" prefHeight="35.0" prefWidth="191.0" promptText="Show Price">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="979.0" layoutY="408.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="0.0" />
+      <TextField fx:id="txtQtyOnHand" editable="false" layoutX="967.0" layoutY="408.0" prefHeight="35.0" prefWidth="191.0" promptText="Qty On Hand">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Hyperlink fx:id="lblDiscountAv" layoutX="40.0" layoutY="446.0" text="Discount Available" textFill="#d35400" visible="false">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Hyperlink>
+      <TextField fx:id="txtBuyingPrice" editable="false" layoutX="1175.0" layoutY="408.0" prefHeight="35.0" prefWidth="191.0" promptText="Buying Price">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtQty" layoutX="1386.0" layoutY="408.0" onAction="#AddToCart" prefHeight="35.0" prefWidth="80.0" promptText="QTY" style="-fx-border-color: #3498db;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="954.0" layoutY="408.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="0.0" />
+      <Separator layoutX="1164.0" layoutY="408.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="0.0" />
+      <Separator layoutX="1375.0" layoutY="408.0" orientation="VERTICAL" prefHeight="35.0" prefWidth="0.0" />
+      <TableView fx:id="tblCart" layoutX="40.0" layoutY="498.0" prefHeight="285.0" prefWidth="1410.0">
+        <columns>
+          <TableColumn fx:id="colCode" prefWidth="263.0" text="#" />
+          <TableColumn fx:id="colDescription" prefWidth="370.0" text="Description" />
+            <TableColumn fx:id="colSellingPrice" minWidth="0.0" prefWidth="165.0" text="Selling Price" />
+            <TableColumn fx:id="colSelDiscount" minWidth="0.0" prefWidth="97.0" text="Discount" />
+            <TableColumn fx:id="colSelShowPrice" minWidth="0.0" prefWidth="152.0" text="Show Price" />
+            <TableColumn fx:id="colCelQty" minWidth="0.0" prefWidth="97.0" text="QTY" />
+            <TableColumn fx:id="colSelTotalCost" minWidth="0.0" prefWidth="137.0" text="Total Cost" />
+            <TableColumn fx:id="colSelOperation" minWidth="0.0" prefWidth="128.0" text="Operation" />
+        </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="1300.0" layoutY="796.0" onAction="#btnCompleteOrderOnAction" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #2980b9;" text="Complete Order" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Hyperlink layoutX="42.0" layoutY="796.0" text="Total Cost" textFill="#d35400">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink fx:id="txtTotal" layoutX="172.0" layoutY="796.0" text="0.00/=" textFill="#d35400">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</AnchorPane>
